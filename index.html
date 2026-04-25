@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numerical Methods Pro</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div id="splash">
+  <h1>Numerical Solver</h1>
+  <p>Click to Start</p>
+</div>
+
+<div class="container">
+
+<div class="left">
+
+<div class="card highlight">
+  <h2>Root</h2>
+  <h1 id="root">--</h1>
+</div>
+
+<div class="card">
+  <input id="equation" placeholder="Example: x*x - 4">
+
+  <div class="dropdown">
+    <div id="selected">bisection</div>
+    <div class="options">
+      <div onclick="selectMethod('bisection')">Bisection</div>
+      <div onclick="selectMethod('false')">False Position</div>
+      <div onclick="selectMethod('newton')">Newton</div>
+      <div onclick="selectMethod('fixed')">Fixed Point</div>
+      <div onclick="selectMethod('secant')">Secant</div>
+    </div>
+  </div>
+
+  <input id="xl" placeholder="xl">
+  <input id="xu" placeholder="xu">
+  <input id="guess" placeholder="Initial Guess">
+  <input id="eps" placeholder="Error %">
+
+  <button onclick="solve(event)">Solve</button>
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="card">
+  <canvas id="chart"></canvas>
+</div>
+
+<div class="card">
+  <table id="table">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
